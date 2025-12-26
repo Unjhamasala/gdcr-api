@@ -31,7 +31,7 @@ FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
 # -----------------------------
 # 🔥 DOWNLOAD GPKG IF NOT PRESENT
 # -----------------------------
-GPKG_URL = "https://drive.google.com/uc?id=https://drive.google.com/file/d/1X76hLR1p28mLmzxqn7yZUhSJEmh_J5cr/view?usp=drive_link"
+GPKG_URL = "https://drive.google.com/uc?id=1X76hLR1p28mLmzxqn7yZUhSJEmh_J5cr"
 
 if not os.path.exists(LOCAL_GPKG):
     print("📥 Downloading GPKG file...")
