@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+geopandas
+shapely
+fiona
+pyproj
+firebase-admin
+pydantic
+requests

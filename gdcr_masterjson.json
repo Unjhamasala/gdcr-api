@@ -1,0 +1,178 @@
+[
+  {
+  "zoning": "Gamtal",
+  "zone_key": "gamtal",
+  "zone_code": "GM",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Dwelling-1  (Detached dwelling unit, Clinic not having indoor treatment facility.), \n•Dwelling-2 (Semi-detached dwelling unit, Row House, Tenement, Chawls, Farm House,Clinic not having indoor treatment facility, Cottage Industry (not involving use or installation of any kind which may create noise, vibration, fume dust etc.) 1[Home occupant and cottage industry shall not be permitted in tenement  dwelling/ flats. ]Part of Residential building may be used for professional requirements, as office, by advocate, doctors, architects, engineers and chartered accountants and Jari Industry.), \n•Educational-1  (Primary Schools, Secondary Schools, Higher Secondary Schools), \n•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home), \n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities l ke Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Recreation Use (Natural Reserve and Sanctuary, Race Track, Shooting Range, Zoo, Gardens, Recreation, Nursery, Botanical Garden, Green House, Play Fields, Forest), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall),\n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities)",
+    "base_fsi": 2,
+    "chargable_fsi": "Nil",
+    "max_fsi": 2,
+    "max_height_m": 10.5,
+    "road_width": "Less than 12.0 mts"
+  },
+  {
+  "zoning": "Gamtal Extention Zone",
+  "zone_key": "gamtal_extension_zone",
+  "zone_code": "GME",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Dwelling-1  (Detached dwelling unit, Clinic not having indoor treatment facility.), \n•Dwelling-2 (Semi-detached dwelling unit, Row House, Tenement, Chawls, Farm House,Clinic not having indoor treatment facility, Cottage Industry (not involving use or installation of any kind which may create noise, vibration, fume dust etc.) 1[Home occupant and cottage industry shall not be permitted in tenement  dwelling/ flats. ]Part of Residential building may be used for professional requirements, as office, by advocate, doctors, architects, engineers and chartered accountants and Jari Industry.), \n•Educational-1  (Primary Schools, Secondary Schools, Higher Secondary Schools), \n•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home), \n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities l ke Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Recreation Use (Natural Reserve and Sanctuary, Race Track, Shooting Range, Zoo, Gardens, Recreation, Nursery, Botanical Garden, Green House, Play Fields, Forest), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall),\n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities)",
+    "base_fsi": 1.2,
+    "chargable_fsi": "Nil",
+    "max_fsi": 1.2,
+    "max_height_m": 10.5,
+    "road_width": "Less than 12.0 mts"
+  },
+  {
+  "zoning": "Eco- sensitive Zone",
+  "zone_key": "eco-sensitive_zone",
+  "zone_code": "ESZ",
+  "permissible_use": "•As per Coastal Regulation Zone Notification, 2019.",
+    "base_fsi": "As per Coastal Regulation Zone Notification, 2019.",
+    "chargable_fsi": "",
+    "max_fsi": "",
+    "max_height_m": "NA",
+    "road_width": "NA"
+  },
+  {
+  "zoning": "Knowledge and institutional Zone",
+  "zone_key": "knowledge_institutional_zone",
+  "zone_code": "KZ",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Assembly-2 (Convention Centre, Exhibition H all, Auditorium, Planetarium, Stadium, Museum, Exhibition Halls, Wadi), \n•Educational-1  (Primary Schools, Secondary Schools, Higher Secondary Schools),\n•Educational-2 (College, Polytechnic, University and ancillary use, Residential Accommodation for staff and students - Dwelling-1, 2 & 3 and Retail Shops, Restaurants as a part of Educational Institute / Research Centers up to 20% of Utilized FSI shall be permissible.)\n•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home), \n•Health-3 (Civil Hospital, Medical College and Research Centre, Hospital of more than 20 Bed), \n•Institutional (Research Centres, Dwelling-1,2 &3, Retail Shop and Restaurants as a part of Educational Institute up to 20% of Utilised FSI, Residential Accommodation for staff and students - Dwelling-1, 2 & 3 and Retail Shops, Restaurants as a part of Educational Institute / Research Centers up to 20% of Utilized FSI shall be permissible.)\n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities like Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall), \n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities)\n•Tourism Services (Tourism Sponsored activity - ‘Tourism Sponsored Activity’ shall mean activities related to promotion and facilitation of tourism that are undertaken by any State or Central Government department, semi-government organization or appropriate authority.)",
+    "base_fsi": 1.2,
+    "chargable_fsi": 0.3,
+    "max_fsi": 1.5,
+    "max_height_m": 16.5,
+    "road_width": "12.0 mts and above"
+  },
+  {
+  "zoning": "Logistic Zone",
+  "zone_key": "logistic_zone",
+  "zone_code": "LZ",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Dwelling-2 (Semi-detached dwelling unit, Row House, Tenement, Chawls, Farm House,Clinic not having indoor treatment facility, Cottage Industry (not involving use or installation of any kind which may create noise, vibration, fume dust etc.) 1[Home occupant and cottage industry shall not be permitted in tenement  dwelling/ flats. ]Part of Residential building may be used for professional requirements, as office, by advocate, doctors, architects, engineers and chartered accountants and Jari Industry.[max. up to 20% of utilized FSI with units of built-up area up to 66 sq.mts. for industrial workers]), \n•Dwelling-3 (Apartment, Hostel, Dharamshala, Pre-school and Affordable Housing [max. up to 20% of utilized FSI with units of built-up area up to 66 sq.mts. for industrial workers]),\n•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home),\n•Industrial-1 (All type of Light, Service Industries, Small Factories, Warehouses, Newspaper Printing Press, Concrete Batching Plant, stone cutting and polishing; Poultry Farm, Dairy, Ass mbly Plant, Shipping Recycling Unit, Scrape Processing/Cutting Unit, Scrap Shorting Yard, Industrial Row House),\n•Industrial-3 (Cold Storage, Oxygen Plant, Agro Industries, Packaging, Mechanical Engineering, Fly Ash.)\n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Mercantile-2 (Shopping Mall, Laboratory, Nursing Home, Maternity Home, Kerosene Depot, Corporate Offices, Call Centres, Training Centres, CinePlex (having maximum seating capacity of 40 seats).), \n•Mercantile-3 (Wholesale Market, Indoor Hospital, Diamond Industry, Wholesale Market and their ancillary uses, Activity Related to I.T.), \n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities like Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Service Establishment  (Auto Repair, Workshop, Wood Workshop, Fabrication, Public-Garage),\n•Storage (Warehouse, Godown, Cold Storage, Timber Mart, Steel Stockyard, Ice Factory , 1[LPG Cylinder Godown subject to NOC/Approval and conditions laid down by concerned department/authority]),\n•Transport (Truck Terminal, Bus Terminal (by private enterprise), Transport Terminal for Goods and Passengers)",
+    "base_fsi": 1,
+    "chargable_fsi": "Nil",
+    "max_fsi": 1,
+    "max_height_m": 10.5,
+    "road_width": "Less than 12.0 mts"
+  },
+  {
+  "zoning": "Industrial Zone",
+  "zone_key": "industrial_zone",
+  "zone_code": "INZ",
+  "permissible_use": "•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home), \n•Industrial-1 (All type of Light, Service Industries, Small Factories, Warehouses, Newspaper Printing Press, Concrete Batching Plant, stone cutting and polishing; Poultry Farm, Dairy, Ass mbly Plant, Shipping Recycling Unit, Scrape Processing/Cutting Unit, Scrap Shorting Yard, Industrial Row House, [” However, in a building used for IN1, a maximum aggregated 20% of utilized FSI shall be permitted for DW2/DW3 with units of built-up area up to 66.0 sq. mts. For industrial workers\"])\n•Industrial-3 (Cold Storage, Oxygen Plant, Agro Industries, Packaging, Mechanical Engineering, Fly Ash.)\n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Service Establishment  (Auto Repair, Workshop, Wood Workshop, Fabrication, Public-Garage), \n•Storage (Warehouse, Godown, Cold Storage, Timber Mart, Steel Stockyard, Ice Factory , 1[LPG Cylinder Godown subject to NOC/Approval and conditions laid down by concerned department/authority]),\n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities)",
+    "base_fsi": 1,
+    "chargable_fsi": "Nil",
+    "max_fsi": 1,
+    "max_height_m": 10.5,
+    "road_width": "Less than 12.0 mts"
+  },
+  {
+  "zoning": "Recreational Zone",
+  "zone_key": "recreational_zone",
+  "zone_code": "REZ",
+  "permissible_use": "•Agriculture-1 (Horticulture, Repair and Sale of agricultural equipment, Saw Mill, Brick Kiln, Dairy Development, Fisheries, Animal Rearing and Breeding, Natural\nResource and Sanctuary, Tannery, Concrete Batching Plant, Cemetery, Burial Ground, Regional Park, Way-side Shop, Agricultural Vocational Training Centre, Panjarapole, Roofing Tiles and Cement Pipes, Studio, Animal Shed, Agro Based Storage, Farm House.),\n•Agriculture-2 (Agricultural Vocational Training, Mining and Quarrying, Dumping of Solid Waste, Shooting Range, Drive-in Cinema, Golf Course, Ship Building or Ship Breaking, Fishing, Aqua culture Processing of fish and industry based on it port, Harbour ferry hovercraft service marine transport ,Telephone microwave or other means of communication facilities, salt pans and non- polluting salt processing activity Any Type activity permissible as per the provision of the Environment Protection Act.1968 and Environment (Protection Rules-1968)),\n•Agriculture-3 (Poultry Farm, Agro-based Godowns),\n•Assembly-4 (Party Plot, Garden Restaurants),\n•Dwelling-1  (Detached dwelling unit, Clinic not having indoor treatment facility.), \n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities l ke Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Recreation Use (Natural Reserve and Sanctuary, Race Track, Shooting Range, Zoo, Gardens, Recreation, Nursery, Botanical Garden, Green House, Play Fields, Forest), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Small Center (Kothar) - (Building related to agricultural activities, small godowns / storage, having building dimensions not exceeding 30 mtrs. X 12 mtrs.),\n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall),\n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities)",
+    "base_fsi": 0.3,
+    "chargable_fsi": "Nil",
+    "max_fsi": 0.3,
+    "max_height_m": 10.5,
+    "road_width": "Less than 12.0 mts"
+  },
+  {
+  "zoning": "Commercial Zone",
+  "zone_key": "commercial_zone",
+  "zone_code": "C",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Assembly-2 (Convention Centre, Exhibition H all, Auditorium, Planetarium, Stadium, Museum, Exhibition Halls, Wadi), \n•Assembly-3  (Theatre, Cinema, Multiplex, Drive-in Cinema, Clubs, Golf Course , 2[Shopping Mall], \n•Assembly-4  (Party Plot, Garden Restaurants), \n•Educational-1 (Primary Schools, Secondary Schools, Higher Secondary Schools), \n•Dwelling-1  (Detached dwelling unit, Clinic not having indoor treatment facility.), \n•Dwelling-2 (Semi-detached dwelling unit, Row House, Tenement, Chawls, Farm House,Clinic not having indoor treatment facility, Cottage Industry (not involving use or installation of any kind which may create noise, vibration, fume dust etc.) 1[Home occupant and cottage industry shall not be permitted in tenement  dwelling/ flats. ]Part of Residential building may be used for professional requirements, as office, by advocate, doctors, architects, engineers and chartered accountants and Jari Industry.),\n•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home), \n•Health-3 (Civil Hospital, Medical College and Research Centre, Hospital of more than 20 Bed), \n•Hospitality (Bed and Breakfast, Guest House, Lodging and Boarding, Hotel, Motel, Serviced Apartment, Star category hotels, Resorts, Tent Accomodation, Clubs, Motel, Serviced Apartment, Hostel, Dharamshala, Boutique Hotel), \n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Mercantile-2 (Shopping Mall, Laboratory, Nursing Home, Maternity Home, Kerosene Depot, Corporate Offices, Call Centres, Training Centres, CinePlex (having maximum seating capacity of 40 seats).), \n•Mercantile-3 (Wholesale Market, Indoor Hospital, Diamond Industry, Wholesale Market and their ancillary uses, Activity Related to I.T.), \n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities like Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Service Establishment  (Auto Repair, Workshop, Wood Workshop, Fabrication, Public-Garage), \n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall), \n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities)",
+    "base_fsi": 1,
+    "chargable_fsi": 0.5,
+    "max_fsi": 1.5,
+    "max_height_m": 16.5,
+    "road_width": "12.0 mts and above"
+  },
+  {
+  "zoning": "Residential Zone",
+  "zone_key": "residential_zone",
+  "zone_code": "R",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Dwelling-1  (Detached dwelling unit, Clinic not having indoor treatment facility.), \n•Dwelling-2 (Semi-detached dwelling unit, Row House, Tenement, Chawls, Farm House,Clinic not having indoor treatment facility, Cottage Industry (not involving use or installation of any kind which may create noise, vibration, fume dust etc.) 1[Home occupant and cottage industry shall not be permitted in tenement  dwelling/ flats. ]Part of Residential building may be used for professional requirements, as office, by advocate, doctors, architects, engineers and chartered accountants and Jari Industry.), \n•Educational-1  (Primary Schools, Secondary Schools, Higher Secondary Schools), \n•Health-1 (PHC, Clinic, Dispensary), \n•Health-2 (Indoor Hospital up to 20 Bed, Surgical Hospital, Nursing Home), \n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities l ke Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Recreation Use (Natural Reserve and Sanctuary, Race Track, Shooting Range, Zoo, Gardens, Recreation, Nursery, Botanical Garden, Green House, Play Fields, Forest), \n•Religious (Temples, Church, Mosque, Gurudwara, Synagogue, Upashraya, Sant Niwas or any Religious Structure), \n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall),\n•Temporary Use (Fair, Circus, Exhibition, Mela, Pandal, Fisheries related activities), \n•Assembly-4 (Party Plot, Garden Restaurants), \n•Dwelling-3 (Apartment, Hostel, Dharamshala, Pre-school and Affordable Housing ), \n•Mercantile-2 (Shopping Mall, Laboratory, Nursing Home, Maternity Home, Kerosene Depot, Corporate Offices, Call Centres, Training Centres, CinePlex (having maximum seating capacity of 40 seats), \n•Service Establishment (Auto Repair, Workshop, Wood Workshop, Fabrication, Public-Garage),",
+    "base_fsi": 1.2,
+    "chargable_fsi": 0.3,
+    "max_fsi": 1.5,
+    "max_height_m": 16.5,
+    "road_width": "12.0 mts and above"
+  },
+  {
+  "zoning": "Central Vista Zone",
+  "zone_key": "central_vista_zone",
+  "zone_code": "CVZ",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Assembly-2 (Convention Centre, Exhibition H all, Auditorium, Planetarium, Stadium, Museum, Exhibition Halls, Wadi), \n•Assembly-3  (Theatre, Cinema, Multiplex, Drive-in Cinema, 2[Shopping Mall], \n•Educational-1 (Primary Schools, Secondary Schools, Higher Secondary Schools), \n•Hospitality (Bed and Breakfast, Guest House, Lodging and Boarding, Hotel, Motel, Serviced Apartment, Star category hotels, Resorts, Tent Accomodation, Clubs, Motel, Serviced Apartment, Hostel, Dharamshala, Boutique Hotel), \n•Institutional (Research Centres, Dwelling-1,2 &3, Retail Shop and Restaurants as a part of Educational Institute up to 20% of Utilised FSI, Residential Accommodation for staff and students - Dwelling-1, 2 & 3 and Retail Shops, Restaurants as a part of Educational Institute / Research Centers up to 20% of Utilized FSI shall be permissible.)\n•Mercantile-1 (Shop, Business, Restaurant, Shopping Centre, Light Ho me Workshop, LPG Cylinder Godown, Clinic, Fitness Centre), \n•Mercantile-2 (Shopping Mall, Laboratory, Nursing Home, Maternity Home, Kerosene Depot, Corporate Offices, Call Centres, Training Centres, CinePlex (having maximum seating capacity of 40 seats).),\n•Public- Institutional (Any offices for appropriate authority, government and semi gov rnment, Public assembly, Public facilities and amenities like Health Public facilities and amenities like Transport and Communication, Public facilities and amenities like public security, Publ c facilities and amenities like social welfare Recreation of any Type, Post Office, Police –Chowki, ward office), \n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Tourism Services (Tourism Sponsored activity - ‘Tourism Sponsored Activity’ shall mean activities related to promotion and facilitation of tourism that are undertaken by any State or Central Government department, semi-government organization or appropriate authority.)",
+    "base_fsi": 1.2,
+    "chargable_fsi": 0.6,
+    "max_fsi": 1.8,
+    "max_height_m": 16.5,
+    "road_width": "12.0 mts and above"
+  },
+  {
+  "zoning": "Waterbody",
+  "zone_key": "waterbody",
+  "zone_code": "W",
+  "permissible_use": "• This is waterbody",
+    "base_fsi": "NA",
+    "chargable_fsi": "",
+    "max_fsi": "",
+    "max_height_m": "NA",
+    "road_width": "NA"
+  },
+  {
+  "zoning": "Special Plan Development Zone",
+  "zone_key": "special_plan_development_zone",
+  "zone_code": "SPD-L",
+  "permissible_use": "•As per the Master Plan to be prepared by LADA in consultation with NMHC & other stakeholders including Archaeologist, Heritage Expert & etc. but not limited to.",
+    "base_fsi": "As per the Master Plan to be prepared by LADA in\nconsultation with NMHC & other stakeholders including Archaeologist, Heritage Expert & et but not limited to.",
+    "chargable_fsi": "",
+    "max_fsi": "",
+    "max_height_m": "NA",
+    "road_width": "NA"
+  },
+  {
+  "zoning": "Hospitality Zone",
+  "zone_key": "hospitality_zone",
+  "zone_code": "HoZ",
+  "permissible_use": "•Assembly-1 (Community Hall, Banquet Hall, Town Hall), \n•Assembly-2 (Convention Centre, Exhibition H all, Auditorium, Planetarium, Stadium, Museum, Exhibition Halls, Wadi), \n•Assembly-3  (Theatre, Cinema, Multiplex, Drive-in Cinema, Clubs, Golf Course , 2[Shopping Mall], \n•Assembly-4  (Party Plot, Garden Restaurants),\n•Dwelling-1  (Detached dwelling unit, Clinic not having indoor treatment facility.), \n•Dwelling-2 (Semi-detached dwelling unit, Row House, Tenement, Chawls, Farm House,Clinic not having indoor treatment facility, Cottage Industry (not involving use or installation of any kind which may create noise, vibration, fume dust etc.) 1[Home occupant and cottage industry shall not be permitted in tenement  dwelling/ flats. ]Part of Residential building may be used for professional requirements, as office, by advocate, doctors, architects, engineers and chartered accountants and Jari Industry.),\n•Hospitality (Bed and Breakfast, Guest House, Lodging and Boarding, Hotel, Motel, Serviced Apartment, Star category hotels, Resorts, Tent Accomodation, Clubs, Motel, Serviced Apartment, Hostel, Dharamshala, Boutique Hotel),\n•Public Utility (Sub-station, Bus Station and Terminals, Fuelling and eV Station and Storage with and without Service Station, Parking, Multi-level Parking; Infrastructure for Water Supply, Purification Plant, Pumping Station, Electricity Sub-station; Drainage, Sanitation, Domestic Garbage Disposal Collection, Solid Waste Transfer Station; Pumping Station, Electricity, Purification Plant, Fire Stations, Solar Power Plant, 2[Crematorium, Cemetery, Burial ground] or any development activity carried out by appropriate authority for public purpose ), \n•Recreation Use (Natural Reserve and Sanctuary, Race Track, Shooting Range, Zoo, Gardens, Recreation, Nursery, Botanical Garden, Green House, Play Fields, Forest),\n•Sports and Leisure (Sports Complex, Swimming Pool, Playfield, Camping Ground, Facility for water sports, Theme/ Amusement Park, Aquarium, Zoo ,Botanical Garden, Exhibition and Mela, Motion Picture Hall), \n•Tourism Services (Tourism Sponsored activity - ‘Tourism Sponsored Activity’ shall mean activities related to promotion and facilitation of tourism that are undertaken by any State or Central Government department, semi-government organization or appropriate authority.)",
+    "base_fsi": 1.2,
+    "chargable_fsi": 0.3,
+    "max_fsi": 1.5,
+    "max_height_m": 16.5,
+    "road_width": "12.0 mts and above"
+  },
+  {
+  "zoning": "Green Space Zone",
+  "zone_key": "green_space_zone",
+  "zone_code": "GSZ",
+  "permissible_use": "•No development shall  be permitted except Development undertaken by any State or Central Government department, semi-government organization or appropriate authority for Public purposes, provided such structure is on Stilt.",
+    "base_fsi": "No development shall be permitted except Development undertaken by any State or Central Government\tdepartment,\tsemi-government organization or appropriate authority for Public\nPurposes, provided such structure is on Stilt.",
+    "chargable_fsi": "",
+    "max_fsi": "",
+    "max_height_m": "NA",
+    "road_width": "NA"
+  },
+  {
+  "zoning": "National Meritime Heritage Complex (NMHC)",
+  "zone_key": "nhmc",
+  "zone_code": "NMHC",
+  "permissible_use": "•As per the Master Plan prepared By the NMHC. (Project by Ministry of Ports, Shipping and Waterways, Government of India)",
+    "base_fsi": "As per the Master Plan prepared by the NMHC.\n(Project by Ministry of Ports, Shipping and Waterways, Government of India).",
+    "chargable_fsi": "",
+    "max_fsi": "",
+    "max_height_m": "NA",
+    "road_width": "NA"
+  },
+  {
+  "zoning": "Existing Road",
+  "zone_key": "existing_road",
+  "zone_code": "EXR",
+  "permissible_use": "• This is existing Road",
+    "base_fsi": "NA",
+    "chargable_fsi": "",
+    "max_fsi": "",
+    "max_height_m": "NA",
+    "road_width": "NA"
+  }
+]
