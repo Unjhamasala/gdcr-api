@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Body
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import geopandas as gpd
-from shapely.geometry import Point
+from shapely.geometry import Point, shape
+import fiona
 import json
 import os
 import requests
@@ -16,9 +16,6 @@ from firebase_admin import credentials, firestore
 # -----------------------------
 app = FastAPI()
 
-# -----------------------------
-# CORS (FlutterFlow safe)
-# -----------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -32,29 +29,25 @@ def root():
     return {"status": "ok"}
 
 # -----------------------------
-# FILE PATHS
+# PATHS
 # -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOCAL_GEOJSON = os.path.join(BASE_DIR, "Lothal_zones.geojson")
 
-# GitHub Release raw file
 GEOJSON_URL = "https://github.com/Unjhamasala/gdcr-api/releases/download/data-v1/Lothal_zones.geojson"
-
 GDCR_FILE = os.path.join(BASE_DIR, "gdcr_masterjson.json")
 FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
 
 # -----------------------------
-# DOWNLOAD GEOJSON IF NOT PRESENT
+# DOWNLOAD GEOJSON ONCE
 # -----------------------------
 if not os.path.exists(LOCAL_GEOJSON):
-    print("⬇️ Downloading GeoJSON...")
+    print("Downloading GeoJSON...")
     r = requests.get(GEOJSON_URL)
     r.raise_for_status()
-
     with open(LOCAL_GEOJSON, "wb") as f:
         f.write(r.content)
-
-    print("✅ GeoJSON downloaded")
+    print("GeoJSON downloaded")
 
 # -----------------------------
 # LOAD GDCR JSON
@@ -72,15 +65,11 @@ if not firebase_admin._apps:
 db = firestore.client()
 
 # -----------------------------
-# MEMORY-SAFE GIS LOADER
+# CORE GDCR LOGIC (ULTRA LOW MEMORY)
 # -----------------------------
-def load_zones_near_point(lat: float, lon: float):
-    """
-    Load only nearby polygons using bounding box
-    (keeps RAM usage very low)
-    """
-    buffer_deg = 0.05  # approx 5 km
-
+def find_gdcr(lat: float, lon: float):
+    point = Point(lon, lat)
+    buffer_deg = 0.05  # ~5 km
     bbox = (
         lon - buffer_deg,
         lat - buffer_deg,
@@ -88,54 +77,36 @@ def load_zones_near_point(lat: float, lon: float):
         lat + buffer_deg,
     )
 
-    gdf = gpd.read_file(
-        LOCAL_GEOJSON,
-        engine="fiona",
-        bbox=bbox
-    )
+    with fiona.open(LOCAL_GEOJSON, "r") as src:
+        for feature in src.filter(bbox=bbox):
+            geom = shape(feature["geometry"])
+            if geom.contains(point):
+                props = feature["properties"]
 
-    # Ensure CRS
-    if gdf.crs is None or gdf.crs.to_epsg() != 4326:
-        gdf = gdf.to_crs(epsg=4326)
+                zone_name = None
+                for k in props:
+                    if k.lower() in ["zoning", "zone", "zone_name"]:
+                        zone_name = str(props[k]).strip()
+                        break
 
-    return gdf
+                if not zone_name:
+                    return {"error": "Zoning column not found"}
 
-# -----------------------------
-# CORE GDCR LOGIC
-# -----------------------------
-def find_gdcr(lat: float, lon: float):
-    point = Point(lon, lat)
+                for row in GDCR_DATA:
+                    if str(row.get("zoning", "")).strip().lower() == zone_name.lower():
+                        return {
+                            "zone": zone_name,
+                            "base_fsi": row.get("base_fsi"),
+                            "max_height_m": row.get("max_height_m"),
+                            "permissible_use": row.get("permissible_use"),
+                        }
 
-    zones_gdf = load_zones_near_point(lat, lon)
-    match = zones_gdf[zones_gdf.contains(point)]
+                return {"zone": zone_name, "error": "GDCR data not found"}
 
-    if match.empty:
-        return {"error": "Point outside GDCR zones"}
-
-    zone_col = None
-    for col in match.columns:
-        if col.strip().lower() in ["zoning", "zone", "zone_name"]:
-            zone_col = col
-            break
-
-    if zone_col is None:
-        return {"error": "Zoning column not found"}
-
-    zone_name = str(match.iloc[0][zone_col]).strip()
-
-    for row in GDCR_DATA:
-        if str(row.get("zoning", "")).strip().lower() == zone_name.lower():
-            return {
-                "zone": zone_name,
-                "base_fsi": row.get("base_fsi"),
-                "max_height_m": row.get("max_height_m"),
-                "permissible_use": row.get("permissible_use"),
-            }
-
-    return {"zone": zone_name, "error": "GDCR data not found"}
+    return {"error": "Point outside GDCR zones"}
 
 # -----------------------------
-# API: LAT / LON
+# API: LAT/LON
 # -----------------------------
 @app.get("/gdcr-by-latlon")
 def gdcr_by_latlon(lat: float, lon: float):
@@ -164,10 +135,7 @@ def gdcr_by_doc(data: DocRequest = Body(...)):
     if not geo:
         return {"error": "Lat/Long not found in document"}
 
-    lat = float(geo.latitude)
-    lon = float(geo.longitude)
-
-    result = find_gdcr(lat, lon)
+    result = find_gdcr(float(geo.latitude), float(geo.longitude))
 
     if "error" in result:
         return result
@@ -185,7 +153,7 @@ def gdcr_by_doc(data: DocRequest = Body(...)):
     }
 
 # -----------------------------
-# RUN (RENDER SAFE)
+# RUN
 # -----------------------------
 if __name__ == "__main__":
     import uvicorn
