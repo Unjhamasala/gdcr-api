@@ -39,10 +39,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOCAL_GEOJSON = os.path.join(BASE_DIR, "Lothal_zones.geojson")
 
 # GitHub Release raw file (already correct)
-GEOJSON_URL = (
-    "https://github.com/Unjhamasala/gdcr-api/"
-    "releases/download/data-v1/Lothal_zones.geojson"
-)
+GEOJSON_URL = "https://github.com/Unjhamasala/gdcr-api/releases/download/data-v1/Lothal_zones.geojson"
 
 GDCR_FILE = os.path.join(BASE_DIR, "gdcr_masterjson.json")
 FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
@@ -102,3 +99,4 @@ def load_zones_near_point(lat: float, lon: float):
 
     if gdf.crs is None or gdf.crs.to_epsg() != 4326:
         gdf = gdf.to_crs(eps_
+
