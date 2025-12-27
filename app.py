@@ -11,14 +11,17 @@ import requests
 import firebase_admin
 from firebase_admin import credentials, firestore
 
+# -----------------------------
+# FASTAPI APP
+# -----------------------------
 app = FastAPI()
 
-# ------------------
-# ⇒ ADD CORS
-# ------------------
+# -----------------------------
+# CORS (FlutterFlow safe)
+# -----------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can restrict later
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,31 +31,55 @@ app.add_middleware(
 def root():
     return {"status": "ok"}
 
-# ------------------
-# FILEPATHS
-# ------------------
+# -----------------------------
+# FILE PATHS
+# -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-LOCAL_GPKG = os.path.join(BASE_DIR, "Lothal_zones_dissolved_4326.gpkg")
+
+# 🔴 IMPORTANT: USE GEOJSON (NOT GPKG)
+LOCAL_GEOJSON = os.path.join(BASE_DIR, "Lothal_zones.geojson")
+
+# 🔴 DIRECT GOOGLE DRIVE DOWNLOAD LINK
+GEOJSON_URL = "https://drive.google.com/uc?id=h1yGea5PN23dCrNxXoJIjCxoy4C_S7zhXn"
+
 GDCR_FILE = os.path.join(BASE_DIR, "gdcr_masterjson.json")
 FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
 
-# Download if missing
-GPKG_URL = "https://drive.google.com/uc?id=1X76hLR1p28mLmzxqn7yZUhSJEmh_J5cr"
-if not os.path.exists(LOCAL_GPKG):
-    r = requests.get(GPKG_URL)
-    with open(LOCAL_GPKG, "wb") as f:
+# -----------------------------
+# DOWNLOAD GEOJSON IF MISSING
+# -----------------------------
+if not os.path.exists(LOCAL_GEOJSON):
+    print("⬇️ Downloading GeoJSON from Drive...")
+    r = requests.get(GEOJSON_URL)
+    r.raise_for_status()
+    with open(LOCAL_GEOJSON, "wb") as f:
         f.write(r.content)
+    print("✅ GeoJSON downloaded")
 
-zones_gdf = gpd.read_file(LOCAL_GPKG, engine="fiona").to_crs(epsg=4326)
+# -----------------------------
+# LOAD GIS + GDCR DATA
+# -----------------------------
+zones_gdf = gpd.read_file(LOCAL_GEOJSON)
+
+# Ensure CRS = EPSG:4326
+if zones_gdf.crs is None or zones_gdf.crs.to_epsg() != 4326:
+    zones_gdf = zones_gdf.to_crs(epsg=4326)
+
 with open(GDCR_FILE, "r", encoding="utf-8") as f:
     GDCR_DATA = json.load(f)
 
+# -----------------------------
+# FIREBASE INIT
+# -----------------------------
 if not firebase_admin._apps:
     cred = credentials.Certificate(FIREBASE_KEY)
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
+# -----------------------------
+# CORE GDCR LOGIC
+# -----------------------------
 def find_gdcr(lat: float, lon: float):
     point = Point(lon, lat)
     match = zones_gdf[zones_gdf.contains(point)]
@@ -71,34 +98,36 @@ def find_gdcr(lat: float, lon: float):
 
     zone_name = str(match.iloc[0][zone_col]).strip()
 
-    gdcr_info = None
     for row in GDCR_DATA:
         if str(row.get("zoning", "")).strip().lower() == zone_name.lower():
-            gdcr_info = row
-            break
-
-    if not gdcr_info:
-        return {"zone": zone_name, "error": "GDCR data not found"}
+            return {
+                "zone": zone_name,
+                "base_fsi": row.get("base_fsi"),
+                "max_height_m": row.get("max_height_m"),
+                "permissible_use": row.get("permissible_use"),
+            }
 
     return {
         "zone": zone_name,
-        "base_fsi": gdcr_info.get("base_fsi"),
-        "max_height_m": gdcr_info.get("max_height_m"),
-        "permissible_use": gdcr_info.get("permissible_use"),
+        "error": "GDCR data not found"
     }
 
+# -----------------------------
+# API: LAT/LON (FlutterFlow)
+# -----------------------------
 @app.get("/gdcr-by-latlon")
 def gdcr_by_latlon(lat: float, lon: float):
-    return {
-        "zone": "TEST_ZONE",
-        "base_fsi": 1.8,
-        "max_height_m": 15,
-        "permissible_use": "Residential"
-    }
+    return find_gdcr(lat, lon)
 
+# -----------------------------
+# FIRESTORE REQUEST MODEL
+# -----------------------------
 class DocRequest(BaseModel):
     doc_id: str
 
+# -----------------------------
+# API: FIRESTORE DOC
+# -----------------------------
 @app.post("/gdcr-by-doc")
 def gdcr_by_doc(data: DocRequest = Body(...)):
     doc_ref = db.collection("properties").document(data.doc_id)
@@ -133,6 +162,10 @@ def gdcr_by_doc(data: DocRequest = Body(...)):
         "zone": result["zone"]
     }
 
+# -----------------------------
+# RUN (RENDER SAFE)
+# -----------------------------
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
