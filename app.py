@@ -35,36 +35,50 @@ def root():
 # FILE PATHS
 # -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# 🔴 IMPORTANT: USE GEOJSON (NOT GPKG)
 LOCAL_GEOJSON = os.path.join(BASE_DIR, "Lothal_zones.geojson")
 
-# 🔴 DIRECT GOOGLE DRIVE DOWNLOAD LINK
+# ✅ CORRECT GOOGLE DRIVE DIRECT DOWNLOAD
 GEOJSON_URL = "https://drive.google.com/uc?export=download&id=1yGea5PN23dCrNxXoJIjCxoy4C_S7zhXn"
 
 GDCR_FILE = os.path.join(BASE_DIR, "gdcr_masterjson.json")
 FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
 
 # -----------------------------
-# DOWNLOAD GEOJSON IF MISSING
+# DOWNLOAD GEOJSON SAFELY
 # -----------------------------
 if not os.path.exists(LOCAL_GEOJSON):
     print("⬇️ Downloading GeoJSON from Drive...")
-    r = requests.get(GEOJSON_URL)
+    r = requests.get(GEOJSON_URL, allow_redirects=True)
     r.raise_for_status()
+
+    # 🔴 CRITICAL CHECK: Drive sometimes returns HTML
+    content_type = r.headers.get("Content-Type", "")
+    if "text/html" in content_type.lower():
+        raise RuntimeError(
+            "Downloaded file is HTML, not GeoJSON. "
+            "Check Google Drive sharing permissions."
+        )
+
     with open(LOCAL_GEOJSON, "wb") as f:
         f.write(r.content)
+
     print("✅ GeoJSON downloaded")
 
 # -----------------------------
-# LOAD GIS + GDCR DATA
+# LOAD GIS DATA (FORCE FIONA)
 # -----------------------------
-zones_gdf = gpd.read_file(LOCAL_GEOJSON)
+try:
+    zones_gdf = gpd.read_file(LOCAL_GEOJSON, engine="fiona")
+except Exception as e:
+    raise RuntimeError(f"Failed to read GeoJSON with Fiona: {e}")
 
-# Ensure CRS = EPSG:4326
+# Ensure CRS
 if zones_gdf.crs is None or zones_gdf.crs.to_epsg() != 4326:
     zones_gdf = zones_gdf.to_crs(epsg=4326)
 
+# -----------------------------
+# LOAD GDCR JSON
+# -----------------------------
 with open(GDCR_FILE, "r", encoding="utf-8") as f:
     GDCR_DATA = json.load(f)
 
@@ -107,13 +121,10 @@ def find_gdcr(lat: float, lon: float):
                 "permissible_use": row.get("permissible_use"),
             }
 
-    return {
-        "zone": zone_name,
-        "error": "GDCR data not found"
-    }
+    return {"zone": zone_name, "error": "GDCR data not found"}
 
 # -----------------------------
-# API: LAT/LON (FlutterFlow)
+# API: LAT/LON
 # -----------------------------
 @app.get("/gdcr-by-latlon")
 def gdcr_by_latlon(lat: float, lon: float):
