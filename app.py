@@ -35,42 +35,37 @@ def root():
 # FILE PATHS
 # -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 LOCAL_GEOJSON = os.path.join(BASE_DIR, "Lothal_zones.geojson")
 
-# ✅ CORRECT GOOGLE DRIVE DIRECT DOWNLOAD
-GEOJSON_URL = "https://drive.google.com/uc?export=download&id=1yGea5PN23dCrNxXoJIjCxoy4C_S7zhXn"
+# ✅ GITHUB RELEASE RAW FILE (CHANGE USERNAME ONLY)
+GEOJSON_URL = (
+    "https://github.com/Unjhamasala/gdcr-api/"
+    "releases/download/data-v1/Lothal_zones.geojson"
+)
 
 GDCR_FILE = os.path.join(BASE_DIR, "gdcr_masterjson.json")
 FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
 
 # -----------------------------
-# DOWNLOAD GEOJSON SAFELY
+# DOWNLOAD GEOJSON IF NOT PRESENT
 # -----------------------------
 if not os.path.exists(LOCAL_GEOJSON):
-    print("⬇️ Downloading GeoJSON from Drive...")
-    r = requests.get(GEOJSON_URL, allow_redirects=True)
+    print("⬇️ Downloading GeoJSON from GitHub Release...")
+    r = requests.get(GEOJSON_URL, stream=True)
     r.raise_for_status()
 
-    # 🔴 CRITICAL CHECK: Drive sometimes returns HTML
-    content_type = r.headers.get("Content-Type", "")
-    if "text/html" in content_type.lower():
-        raise RuntimeError(
-            "Downloaded file is HTML, not GeoJSON. "
-            "Check Google Drive sharing permissions."
-        )
-
     with open(LOCAL_GEOJSON, "wb") as f:
-        f.write(r.content)
+        for chunk in r.iter_content(chunk_size=8192):
+            if chunk:
+                f.write(chunk)
 
-    print("✅ GeoJSON downloaded")
+    print("✅ GeoJSON downloaded successfully")
 
 # -----------------------------
 # LOAD GIS DATA (FORCE FIONA)
 # -----------------------------
-try:
-    zones_gdf = gpd.read_file(LOCAL_GEOJSON, engine="fiona")
-except Exception as e:
-    raise RuntimeError(f"Failed to read GeoJSON with Fiona: {e}")
+zones_gdf = gpd.read_file(LOCAL_GEOJSON, engine="fiona")
 
 # Ensure CRS
 if zones_gdf.crs is None or zones_gdf.crs.to_epsg() != 4326:
