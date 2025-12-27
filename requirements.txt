@@ -1,9 +1,8 @@
 fastapi
 uvicorn
 geopandas
-shapely
 fiona
+shapely
 pyproj
 firebase-admin
-pydantic
 requests
