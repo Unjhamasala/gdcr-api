@@ -40,7 +40,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOCAL_GEOJSON = os.path.join(BASE_DIR, "Lothal_zones.geojson")
 
 # 🔴 DIRECT GOOGLE DRIVE DOWNLOAD LINK
-GEOJSON_URL = "https://drive.google.com/uc?export=download&id=h1yGea5PN23dCrNxXoJIjCxoy4C_S7zhXn"
+GEOJSON_URL = "https://drive.google.com/uc?export=download&id=1yGea5PN23dCrNxXoJIjCxoy4C_S7zhXn"
 
 GDCR_FILE = os.path.join(BASE_DIR, "gdcr_masterjson.json")
 FIREBASE_KEY = os.path.join(BASE_DIR, "serviceAccountKey.json")
